@@ -179,7 +179,7 @@ const TableData = ({searchTerm}) => {
       </table>
       
      
-  };
+  }
 
       {/* passed the references for pagination component */}
       {!noSearchResult && 
@@ -191,7 +191,7 @@ const TableData = ({searchTerm}) => {
         handleDelete={handleDelete}
       />}
     </div>
-  );
+  )
 };
 
 export default TableData;

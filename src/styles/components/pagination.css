@@ -4,6 +4,9 @@
     padding-bottom:40px;
     display: flex;
 }
+.pagenavigation .page-button-selector{
+    margin-left: 15px;
+}
 /*Delete button Style*/
 .pagenavigation .remove-selected{
     margin: 0px auto;
@@ -22,7 +25,7 @@
 
 .pagination-section{
     display: flex;
-    width: 57%;
+    width: 50%;
     margin: 0 auto;
 }
 .pagination-section .first-page, .previous-page, .current-page, .last-page, .next-page{
@@ -33,10 +36,33 @@
 }
 /* style for if pagination button is clicked*/
 .grey-bg{
-    border-color: rgb(15, 119, 218) ;
+    border-color: rgb(8, 96, 179) ;
     background-color: #fff;
 }
 /* style for if pagination button is not clicked*/
 .blue-bg{
-    background-color: rgb(15, 119, 218);
+    background-color: rgb(87, 166, 240);
+}
+
+
+/* this style for in max-width:900px*/
+@media(max-width:900px){
+    .pagenavigation{
+       display: block !important;
+    }
+    .pagenavigation .page-button-selector{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .pagenavigation .pagination-section{
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+    }
+    .pagination-section .first-page, .previous-page, .current-page, .last-page, .next-page{
+        border-radius: 25px ;
+        padding: 5px 13px;
+        margin: 0 5px;
+    }
 }

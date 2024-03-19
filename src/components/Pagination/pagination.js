@@ -1,6 +1,6 @@
 import React ,{useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesLeft , faAngleLeft , faAnglesRight , faGreaterThan } from '@fortawesome/free-solid-svg-icons'
+import { faAnglesLeft , faAngleLeft , faAnglesRight , faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
 const Pagination = ({currentPage, setCurrentPage , totalPages ,  selectedItems , handleDelete}) => {
 
@@ -39,10 +39,11 @@ const Pagination = ({currentPage, setCurrentPage , totalPages ,  selectedItems ,
       
    
     <div className='pagenavigation'>
-
+      <div className='page-button-selector'>
       <button className='remove-selected' onClick={handleDeleteSelected}>
           Delete Selected
       </button>
+      </div>
 
       <div className='pagination-section'>
        <button 
@@ -68,7 +69,7 @@ const Pagination = ({currentPage, setCurrentPage , totalPages ,  selectedItems ,
        <button 
        className={`next-page ${clickedPages.includes(currentPage+1) ? 'grey-bg' : 'blue-bg'}`}
        onClick={()=> handlePageClick(currentPage + 1)}>
-           <FontAwesomeIcon icon={faGreaterThan} />
+         <FontAwesomeIcon icon={faAngleRight} />
        </button>
        <button 
        className={`last-page ${clickedPages.includes(totalPages) ? 'grey-bg' : 'blue-bg'}`}
