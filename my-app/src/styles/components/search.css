@@ -1,0 +1,24 @@
+/* Search component CSS started*/
+.search-section .search-class{
+    position: relative;
+}
+.search-section span{
+    position: absolute;
+    right: 150px;
+    cursor: pointer;
+}
+
+
+@media(max-width:900px){
+.search-section span{
+   right: 20px !important;
+
+}
+}
+
+
+
+
+
+
+

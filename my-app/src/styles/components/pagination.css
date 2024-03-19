@@ -1,0 +1,42 @@
+
+.pagenavigation{
+    padding-top:20px;
+    padding-bottom:40px;
+    display: flex;
+}
+/*Delete button Style*/
+.pagenavigation .remove-selected{
+    margin: 0px auto;
+    background-color: #000;
+    border-radius: 25px;
+    color: #fff;
+    padding: 10px 50px;
+}
+.pagenavigation .remove-selected:hover{
+    background-color: red;
+}
+/* Gray background color for selected row or rows */
+.selected-row {
+    background-color: #6663633a; 
+  }
+
+.pagination-section{
+    display: flex;
+    width: 57%;
+    margin: 0 auto;
+}
+.pagination-section .first-page, .previous-page, .current-page, .last-page, .next-page{
+    border: 1px solid gray;
+    border-radius: 25px ;
+    padding: 10px 17px;
+    margin: 0 10px;
+}
+/* style for if pagination button is clicked*/
+.grey-bg{
+    border-color: rgb(15, 119, 218) ;
+    background-color: #fff;
+}
+/* style for if pagination button is not clicked*/
+.blue-bg{
+    background-color: rgb(15, 119, 218);
+}

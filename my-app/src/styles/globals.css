@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import '../styles/components/search.css';
+@import '../styles/components/table.css';
+@import '../styles/components/pagination.css';
+
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+}
