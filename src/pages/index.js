@@ -5,7 +5,8 @@ import TableData from '@/components/TableData/table'
 
 
 
-const index = () => {
+
+const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   
@@ -22,6 +23,6 @@ const index = () => {
   )
 }
 
-export default index
+export default Home
 
 
