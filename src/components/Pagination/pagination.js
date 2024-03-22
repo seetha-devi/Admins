@@ -30,13 +30,12 @@ const Pagination = ({currentPage, setCurrentPage , totalPages ,  selectedItems ,
   // };
   const handlePageClick = (page) => {
     setCurrentPage(page);
-    setClickedPages((prevClickedPages) => [...prevClickedPages, page]);
+    setClickedPages([page]);  /*(prevClickedPages) => [...prevClickedPages, page]*/
   };
   
 
 
   return (
-      
    
     <div className='pagenavigation'>
       <div className='page-button-selector'>
@@ -47,14 +46,15 @@ const Pagination = ({currentPage, setCurrentPage , totalPages ,  selectedItems ,
 
       <div className='pagination-section'>
        <button 
-       className={`first-page ${clickedPages.includes(1) ? 'grey-bg' : 'blue-bg'}`}
+       className={`first-page ${clickedPages.includes(1) ? 'blue-bg' : 'grey-bg'}`}
        onClick={()=>handlePageClick(1)}
        >
            <FontAwesomeIcon icon={faAnglesLeft} />
        </button>
        <button
-       className={`previous-page ${clickedPages.includes(currentPage-1) ? 'grey-bg' : 'blue-bg'}`}
+       className={`previous-page ${clickedPages.includes(currentPage-1) ? 'blue-bg' : 'grey-bg'}`}
        onClick={()=>handlePageClick(currentPage-1)}
+       style={{ display: currentPage === 1 ? 'none' : 'block' }}
        >
            <FontAwesomeIcon icon={faAngleLeft} />
        </button>
@@ -62,19 +62,22 @@ const Pagination = ({currentPage, setCurrentPage , totalPages ,  selectedItems ,
        {Array.from({ length: totalPages }, (_, index) => (
           <button key={index}
            onClick={() => handlePageClick(index + 1)} 
-           className={`current-page ${clickedPages.includes(index+1) ? 'grey-bg' : 'blue-bg'}`}>
+           className={`current-page ${clickedPages.includes(index+1) ? 'blue-bg' : 'grey-bg'}`}>
             {index + 1}
           </button>
         ))}
+          <button 
+          className={`next-page ${clickedPages.includes(currentPage + 1) ? 'blue-bg' : 'grey-bg'}`}
+          style={{ display: currentPage === totalPages ? 'none' : 'block' }} /* not display when no items  */
+          onClick={() => handlePageClick(currentPage + 1)}
+           >
+        <FontAwesomeIcon icon={faAngleRight} />
+         </button>
+
        <button 
-       className={`next-page ${clickedPages.includes(currentPage+1) ? 'grey-bg' : 'blue-bg'}`}
-       onClick={()=> handlePageClick(currentPage + 1)}>
-         <FontAwesomeIcon icon={faAngleRight} />
-       </button>
-       <button 
-       className={`last-page ${clickedPages.includes(totalPages) ? 'grey-bg' : 'blue-bg'}`}
+       className={`last-page ${clickedPages.includes(totalPages) ? 'blue-bg' : 'grey-bg'}`}
         onClick={()=> handlePageClick(totalPages)}>
-           <FontAwesomeIcon icon={faAnglesRight}  />
+           <FontAwesomeIcon icon={faAnglesRight} />
        </button>
        
      </div>
